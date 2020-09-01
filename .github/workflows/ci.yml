@@ -14,7 +14,7 @@ jobs:
       - name: refresh
         if: startsWith(github.repository, 'justjavac')
         run: |
-          curl https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-apple-darwin.zip
-          curl https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-pc-windows-msvc.zip
-          curl https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-unknown-linux-gnu.zip
-          curl https://purge.jsdelivr.net/gh/justjavac/dvm_releases/latest.txt
+          curl -sSL https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-apple-darwin.zip
+          curl -sSL https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-pc-windows-msvc.zip
+          curl -sSL https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-unknown-linux-gnu.zip
+          curl -sSL https://purge.jsdelivr.net/gh/justjavac/dvm_releases/latest.txt
