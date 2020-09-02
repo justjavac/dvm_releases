@@ -41,7 +41,8 @@ jobs:
           git config --local user.name "迷渡"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          git commit -am "release $(cat latest.txt)"
+          latest=$(cat latest.txt)
+          git commit -am "release ${latest}"
           git push
 
       - name: refresh
