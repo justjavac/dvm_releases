@@ -43,8 +43,8 @@ jobs:
           git config --local user.email "justjavac@gmail.com"
           git config --local user.name "迷渡"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
-          git pull --rebase
           git commit -am "release $(cat latest.txt)"
+          git pull --rebase
           git push
           curl -sSL https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-apple-darwin.zip
           curl -sSL https://purge.jsdelivr.net/gh/justjavac/dvm_releases/dvm-x86_64-pc-windows-msvc.zip
