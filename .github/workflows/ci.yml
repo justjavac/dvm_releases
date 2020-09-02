@@ -13,6 +13,9 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+      - name: Clone repository
+        uses: actions/checkout@v2
+
       - name: check and download latest
         run: |
           latest=$(curl -sS https://github.com/justjavac/dvm/releases/latest | sed 's/.*v\(.*\)\".*/\1/g')
