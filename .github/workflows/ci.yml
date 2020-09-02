@@ -38,14 +38,13 @@ jobs:
           if [[ -z $(git status -s) ]]; then
             echo "without changes"
             exit 0
-          if
+          fi
 
           git config --local user.email "justjavac@gmail.com"
           git config --local user.name "迷渡"
           git remote set-url origin https://${{ github.actor }}:${{ secrets.GITHUB_TOKEN }}@github.com/${{ github.repository }}
           git pull --rebase
-          latest=$(cat latest.txt)
-          git commit -am "release ${latest}"
+          git commit -am "release $(cat latest.txt)"
           git push
 
       - name: refresh
